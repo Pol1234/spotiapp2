@@ -1,0 +1,24 @@
+$icon-font-path: '../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+
+//$naranja: #fe5e17;
+
+@mixin transition($propiedades){
+    -webkit-transition: $propiedades;
+    -moz-transition: $propiedades;
+    -o-transition: $propiedades;
+    transition: $propiedades;
+}
+
+@mixin transform($propiedades){
+    -webkit-transform: $propiedades;
+    -moz-transform: $propiedades;
+    -o-transform: $propiedades;
+    transform: $propiedades;
+}
+
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+  }
+  @mixin scale ($scala) {
+    @include transform(scale($scala));
+  }

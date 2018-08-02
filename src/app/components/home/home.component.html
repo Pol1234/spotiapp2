@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-4 card-deck mb-5" *ngFor="let pais of paises">
+      <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{ pais.flag }}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{ pais.name }}</h5>
+            <p class="card-text">Poblacion: {{ pais.population | number }}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+  </div>
+</div>
