@@ -1,7 +1,7 @@
 <div class="card-columns">
   <div class="card" *ngFor="let cancion of nuevasCanciones" [ngClass]="{ 'album': cancion.album_type['album'] , 'single': cancion.album_type['single'] }">
     
-    <img class="card-img-top" [src]="cancion.images[0].url" alt="Card image cap">
+    <img class="card-img-top" [src]="cancion.images | noimages" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title text-center">{{ cancion.artists[0].name }}</h5>
       <h2 class="card-title text-center">{{ cancion.name }}</h2>
