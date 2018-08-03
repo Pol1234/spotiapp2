@@ -1,0 +1,25 @@
+.card-columns {
+    .card {
+        .card-body {
+            .card-text {
+                .badge {
+                    transition: all .5s ease-out;
+                    &:hover {                        
+                        background-color: lighten($color: #000000, $amount: 20) ;
+                    }
+                   
+                    
+                }
+                
+            }
+        }
+    }
+}
+.album{
+    background: #000;
+    color: #fff;
+}
+.single{
+    background: red;
+    color: #fff;
+}
