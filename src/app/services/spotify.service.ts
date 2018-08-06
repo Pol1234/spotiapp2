@@ -15,7 +15,7 @@ export class SpotifyService {
   getQuery( query: string){
     
     // tslint:disable-next-line:max-line-length
-    let token: string = '[{"key":"Authorization","value":"Bearer BQDNTeFK4xdjeWBlBWYTtLrvQugWTPaya8bOQGHa5zrff7HG6gIooHvjYzbxvL6KwBkTAU-_veW0-3WcY5YN2KT3jKHQwrMrLKcjXxVZwgwKPWUTTjIVzmHXPa7Z4Qpj57j33EcKzmrPeg","description":""}]';
+    const token = '[{"key":"Authorization","value":"Bearer BQB8Ud6bQuPa6bke92NrTI-5p_DEaJ-0stI1AsyAL57VGZWKVeYDm8HYXC1chaHRITfGNL88Nd0gMbugk8AqWS4urxB9-H1nIDyftRWu65ezGwanDEHH3F6s4Mx7un50pFBgP59-BHDZaQ","description":""}]';
     const url = `https://api.spotify.com/v1/${ query }`;
 
     const headers = new HttpHeaders({
@@ -35,10 +35,26 @@ export class SpotifyService {
       }));
     }
 
-    getArtista(termino: string) {
+    getArtistas(termino: string) {
 
       return this.getQuery(`search?q=${termino}&type=artist`)
               .pipe( map( data => data['artists'].items ) ); /*si solo devuelve una linea se puede mostrar asi*/
+
+    }
+
+    getArtista(id: string) {
+
+      return this.getQuery(`artists/${ id }`); 
+              /*.pipe( map( data => data['artists'].items ) );*/
+              /*si solo devuelve una linea se puede mostrar asi. NO ES NECESARIO EL PIPE PORQUE A DATA VIENE COMO LA QUIERO */
+
+    }
+    
+    getArtistaToptracks(id: string) {
+
+      return this.getQuery(`artists/${ id }/top-tracks?country=us`)
+             .pipe( map( data => data['tracks'] ) ); 
+            
 
     }
 
