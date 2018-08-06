@@ -15,7 +15,7 @@ export class SpotifyService {
   getQuery( query: string){
     
     // tslint:disable-next-line:max-line-length
-    const token = '[{"key":"Authorization","value":"Bearer BQB8Ud6bQuPa6bke92NrTI-5p_DEaJ-0stI1AsyAL57VGZWKVeYDm8HYXC1chaHRITfGNL88Nd0gMbugk8AqWS4urxB9-H1nIDyftRWu65ezGwanDEHH3F6s4Mx7un50pFBgP59-BHDZaQ","description":""}]';
+    const token = '[{"key":"Authorization","value":"Bearer BQDCoL9Nu4wk2pEl6DOT3v__OTU1un3L9n4fdBQoek8Guoxfy3ib5xHk10xCkFh5uyzz02SC_rW9LK2IwAzeSTINZF7JFTHWw-HInYQcggEwWF5r0nxmIIOo0csgFPtFY_OH3d9GNGPWIQ","description":""}]';
     const url = `https://api.spotify.com/v1/${ query }`;
 
     const headers = new HttpHeaders({

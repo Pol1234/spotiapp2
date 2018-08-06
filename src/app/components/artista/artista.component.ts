@@ -12,6 +12,7 @@ export class ArtistaComponent {
   artista: any = {};
   loadingArtist:boolean;
   topTracks: any[]=[];
+  error: boolean;
 
   constructor( private router: ActivatedRoute, private spotify: SpotifyService) {
 
@@ -37,6 +38,8 @@ export class ArtistaComponent {
     .subscribe( topTracks =>{
      this.topTracks= topTracks;
      console.log(topTracks);
+    }, (errorServicio)=>{
+      this.error= true;
     });
 
   }
